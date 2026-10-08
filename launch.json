@@ -20,5 +20,5 @@
     "initialMarketCapWei": "2500000000000000000000",
     "remainderTo": "0x000000000000000000000000000000000000dead"
   },
-  "notes": "Ethereum mainnet (chain ID 1). The constructor mints the full fixed supply to the deploying factory. The factory handles the swarm distributor, pool seed and remainder. Uniswap v4 PoolManager: 0x000000000004444c5dc75cB358380D2e3dE08A90. initialPrice is provenance sqrtPriceX96 assuming BSIMD is currency0; derive the actual price from economics and deployed currency order. No application contracts or token admin powers."
+  "notes": "Ethereum mainnet (chain ID 1). BSIMDToken has an argument-free constructor that mints all 1,000,000,000 BSIMD (1000000000000000000000000000 minor units, 18 decimals) once to msg.sender, the deploying factory. Supply is fixed forever; transfers have no fee, tax or limit. There is no owner, admin, proxy or upgradeability, and no application contracts are requested. Launch distribution is the factory's responsibility; BSIMDToken performs no allocation transfers. Swaps use Uniswap v4 PoolManager 0x000000000004444c5dc75cB358380D2e3dE08A90. pool.initialPrice is provenance sqrtPriceX96 assuming BSIMD is currency0; the deployer derives the actual opening price from economics.initialMarketCapWei, totalSupply and deployed currency order."
 }
